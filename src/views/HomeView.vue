@@ -1,7 +1,22 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" class="m-auto" src="../assets/logo.png">
+    <ul>
+      <li v-for="memo in memos" :key="memo.id">
+        ・{{ memo.title}}
+      </li>
+    </ul>
   </div>
 </template>
+
+<script>
+export default {
+  name: 'HomeView',
+  computed: {
+    memos() {
+      return this.$store.state.memos
+    }
+  }
+}
+</script>
 
 
