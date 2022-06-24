@@ -1,10 +1,11 @@
 <template>
   <div class="home">
-    <ul>
+    <ul v-if="hasMemos">
       <li v-for="memo in memos" :key="memo.id">
-        ・{{ memo.title}}
+        {{ memo.title }}
       </li>
     </ul>
+    <p v-else>メモを登録してみよう</p>
   </div>
 </template>
 
@@ -12,8 +13,11 @@
 export default {
   name: 'HomeView',
   computed: {
-    memos() {
-      return this.$store.state.memos
+    hasMemos() {
+      return this.$store.getters.getCount
+    },
+    memo () {
+      return this.$store.getters.getAll
     }
   }
 }

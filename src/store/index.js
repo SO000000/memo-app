@@ -6,6 +6,12 @@ export default createStore({
     memos: []
   },
   getters: {
+    hasMemos: (state) => {
+      return state.memos.length
+    },
+    getAll: (state) => {
+      return state.memos
+    }
   },
   mutations: {
     save(state, newMemo) {
