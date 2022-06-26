@@ -1,11 +1,11 @@
 <template>
-  <div class="home">
+  <div class="home text-center">
     <ul v-if="hasMemos">
-      <li v-for="memo in memos" :key="memo.id">
+      <li v-for="memo in memos" :key="memo.id" class="">
         {{ memo.title }}
       </li>
     </ul>
-    <p v-else>メモを登録してみよう</p>
+    <p v-else class="text-slate-500">メモを登録してみよう</p>
   </div>
 </template>
 
@@ -16,7 +16,7 @@ export default {
     hasMemos() {
       return this.$store.getters.getCount
     },
-    memo () {
+    memos () {
       return this.$store.getters.getAll
     }
   }

@@ -2,11 +2,11 @@ import { createStore } from 'vuex'
 
 export default createStore({
   state: {
-    memo_id: 1,
+    memo_id:[],
     memos: []
   },
   getters: {
-    hasMemos: (state) => {
+    getCount: (state) => {
       return state.memos.length
     },
     getAll: (state) => {
